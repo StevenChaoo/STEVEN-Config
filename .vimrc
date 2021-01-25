@@ -4,12 +4,6 @@ language en_US
 call plug#begin('~/.vim/plugged')
 
 " 主题
-"Plug 'liuchengxu/space-vim-theme'
-Plug 'crusoexia/vim-monokai'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'jdkanani/vim-material-theme'
-Plug 'lycuid/vim-far'
-
 
 " Bookmarks
 Plug 'MattesGroeger/vim-bookmarks'
@@ -20,16 +14,10 @@ Plug 'mbbill/undotree'
 " IndentLine
 Plug 'Yggdroot/indentLine'
 
-" File navigation
-if has('nvim')
-		Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-		Plug 'Shougo/defx.nvim'
-		Plug 'roxma/nvim-yarp'
-		Plug 'roxma/vim-hug-neovim-rpc'
-endif
+" NERDTree
+Plug 'scrooloose/nerdtree'
 
-" Air-line
+" Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -41,6 +29,23 @@ Plug 'easymotion/vim-easymotion'
 
 " Asyncrun
 Plug 'skywind3000/asyncrun.vim'
+
+" Tagbar
+Plug 'majutsushi/tagbar'
+
+" Auto Formater
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
+" Surround
+Plug 'tpope/vim-surround'
+
+" WildFire
+Plug 'gcmt/wildfire.vim'
+
+" Coc.nvim
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'honza/vim-snippets'
+
 call plug#end()
 " 插件安装结束----------------------------
 " 插件配置开始----------------------------
@@ -48,11 +53,8 @@ call plug#end()
 set background=dark
 colorscheme darcula
 
-" Filenavigation
-source ~/.vim/defx_sy.vim
-noremap <silent> tt :Defx<CR>
-
 " Bookmark
+" use mm to append a bookmark
 let g:bookmark_sign = '>>'
 let g:bookmark_annotation_sign = '##'
 let g:bookmark_center = 1
@@ -61,6 +63,7 @@ highlight link BookmarkLine SpellBad
 highlight link BookmarkAnnotationLine SpellBad
 
 " Undotree
+" use X to open undotree
 noremap <silent> X :UndotreeToggle<CR>
 let g:undotree_DiffAutoOpen = 1
 let g:undotree_SetFocusWhenToggle = 1
@@ -70,6 +73,11 @@ let g:undotree_ShortIndicators = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 
+" NERDTree
+" use tt to open nerdtree
+nmap tt :NERDTreeMirror<CR>
+nmap tt :NERDTreeToggle<CR>
+
 " Airline
 let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#enabled = 1
@@ -77,9 +85,16 @@ let g:airline#extensions#tabline#enabled = 1
 nmap <tab> :bn<cr>
 
 " Commenter
+" use \cc to comment code
+" use \cu to uncomment code
 let g:NERFSpaceDelims = 1
 
+" Easymotion
+" use ss to search code
+nmap ss <Plug>(easymotion-s2)
+
 " AsyncRun
+" use <Shift>R to quickrun
 let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
 nmap <silent> cn :cn<cr>        " next error
 nmap <silent> cp :cp<cr>        " previous error
@@ -89,8 +104,17 @@ nmap <silent> cc :cc<cr>        " show detailed error information
 nmap <silent> cw :cw<cr>        " open error window if has errors
 nmap <silent> co :copen<cr>     " open quickfix window
 
-" Easymotion
-nmap s <Plug>(easymotion-s2)
+" Tagbar
+" use tb to open tagbar
+nmap tb :TagbarToggle<CR>
+
+" Auto Formater
+" use ff to format
+nmap ff :Autoformat<CR>
+
+" Pydiction
+filetype plugin on
+let g:pydiction_location = '~/.vim/tools/pydiction/complete-dict'
 
 " 插件配置结束----------------------------
 " ------------- 插件管理结束 -------------
@@ -98,6 +122,9 @@ nmap s <Plug>(easymotion-s2)
 " ------------- 全局设置开始 -------------
 " Using system clipboard
 set clipboard=unnamed
+
+" 高亮当前行
+set cursorline 
 
 " 80字符自动换行
 set textwidth=80
@@ -140,9 +167,9 @@ func! CompileAndRun()
                 exec "AsyncRun! -raw python %"
 				exec "copen | wincmd p"
 		elseif &filetype == 'cpp'
-				set splitbelow
-				exec "AsyncRun! g++ -std=c++11 % -Wall -o %< && ./%<"
-				exec "copen | wincmd p"
+                set splitbelow
+                exec "AsyncRun! g++ -std=c++11 % -Wall -o %< && ./%<"
+                exec "copen | wincmd p"
 		elseif &filetype == 'c'
 				exec "AsyncRun! cc % -o %< && ./%< && rm -rf %<"
 				exec "copen | wincmd p"
@@ -155,8 +182,8 @@ endfunc
 " auto head
 function HeaderPython()
 		call setline(1, "# Author:STEVEN")
-        call append(1, "# -*- coding:UTF-8 -*-")
-		normal G
-		normal 3o
+        call append(line("."), "# -*- coding:UTF-8 -*-")
+        normal G
+        normal o
 endf
 autocmd bufnewfile *.py call HeaderPython()
