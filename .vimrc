@@ -1,8 +1,8 @@
 language en_US
+
 " ------------- 插件管理开始 -------------
 " 插件安装开始----------------------------
 call plug#begin('~/.vim/plugged')
-
 " 主题
 
 " Bookmarks
@@ -32,9 +32,6 @@ Plug 'skywind3000/asyncrun.vim'
 
 " Tagbar
 Plug 'majutsushi/tagbar'
-
-" Auto Formater
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " Surround
 Plug 'tpope/vim-surround'
@@ -75,14 +72,14 @@ let g:indent_guides_start_level = 2
 
 " NERDTree
 " use tt to open nerdtree
-nmap tt :NERDTreeMirror<CR>
-nmap tt :NERDTreeToggle<CR>
+nnoremap tt :NERDTreeMirror<CR>
+nnoremap tt :NERDTreeToggle<CR>
 
 " Airline
 let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#buffer_nr_show = 1
-nmap <tab> :bn<cr>
+nnoremap <tab> :bn<cr>
 
 " Commenter
 " use \cc to comment code
@@ -96,34 +93,46 @@ nmap ss <Plug>(easymotion-s2)
 " AsyncRun
 " use <Shift>R to quickrun
 let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
-nmap <silent> cn :cn<cr>        " next error
-nmap <silent> cp :cp<cr>        " previous error
-nmap <silent> cx :cclose<cr>    " closse quicfix window
-nmap <silent> cl :cl<cr>        " list all errors
-nmap <silent> cc :cc<cr>        " show detailed error information
-nmap <silent> cw :cw<cr>        " open error window if has errors
-nmap <silent> co :copen<cr>     " open quickfix window
+nnoremap <silent> cn :cn<cr>        " next error
+nnoremap <silent> cp :cp<cr>        " previous error
+nnoremap <silent> cx :cclose<cr>    " closse quicfix window
+nnoremap <silent> cl :cl<cr>        " list all errors
+nnoremap <silent> cc :cc<cr>        " show detailed error information
+nnoremap <silent> cw :cw<cr>        " open error window if has errors
+nnoremap <silent> co :copen<cr>      open quickfix window
 
 " Tagbar
 " use tb to open tagbar
-nmap tb :TagbarToggle<CR>
+nnoremap tb :TagbarToggle<CR>
 
-" Auto Formater
-" use ff to format
-nmap ff :Autoformat<CR>
+" [Coc]
+" Tab自动补全
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-" Pydiction
-filetype plugin on
-let g:pydiction_location = '~/.vim/tools/pydiction/complete-dict'
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+" 回车自动选择
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " 插件配置结束----------------------------
 " ------------- 插件管理结束 -------------
 
 " ------------- 全局设置开始 -------------
+" 命令菜单
+set wildmenu
+
 " Using system clipboard
 set clipboard=unnamed
 
-" 高亮当前行
+" 行显示设置
+set scrolloff=5
 set cursorline 
 
 " 80字符自动换行
@@ -132,12 +141,24 @@ set formatoptions+=mM
 set cc=81
 
 " 键位映射
-inoremap <M-CR> <Esc>
+let mapleader = ' '
+map Q :q<CR>
+map ; :
+map <LEADER>l <C-w>l
+map <LEADER>j <C-w>j
+map <LEADER>k <C-w>k
+map <LEADER>l <C-w>l
+map <left> :vertical resize-5<CR>
+map <right> :vertical resize+5<CR>
+map <up> :res+5<CR>
+map <down> :res-5<CR>
 noremap H 0
 noremap L $
 noremap J 5j
 noremap K 5k
 noremap s <nop>
+noremap <LEADER>- :split<CR>
+noremap <LEADER>= :vsplit<CR>
 
 " 自动排版
 filetype indent on
@@ -147,6 +168,7 @@ syntax on
 
 " 显示行号
 set number
+set relativenumber
 
 " 设置tab键为4个字符
 set tabstop=4
@@ -159,8 +181,15 @@ set mouse=a
 set autoindent
 set smartindent
 
+" 搜索
+set hlsearch
+exec "nohlsearch"
+set incsearch
+set ignorecase
+set smartcase
+
 " 自动编译
-map R :call CompileAndRun()<CR>
+noremap R :call CompileAndRun()<CR>
 func! CompileAndRun()
         exec "w"
         if &filetype == 'python'
@@ -184,6 +213,6 @@ function HeaderPython()
 		call setline(1, "# Author:STEVEN")
         call append(line("."), "# -*- coding:UTF-8 -*-")
         normal G
-        normal o
+        normal 3o
 endf
 autocmd bufnewfile *.py call HeaderPython()
