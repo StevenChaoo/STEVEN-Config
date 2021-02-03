@@ -43,6 +43,9 @@ Plug 'gcmt/wildfire.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 
+" cpp-highlight
+Plug 'octol/vim-cpp-enhanced-highlight'
+
 call plug#end()
 " 插件安装结束----------------------------
 " 插件配置开始----------------------------
@@ -147,7 +150,7 @@ map ; :
 map <LEADER>l <C-w>l
 map <LEADER>j <C-w>j
 map <LEADER>k <C-w>k
-map <LEADER>l <C-w>l
+map <LEADER>h <C-w>h
 map <left> :vertical resize-5<CR>
 map <right> :vertical resize+5<CR>
 map <up> :res+5<CR>
@@ -216,3 +219,13 @@ function HeaderPython()
         normal 3o
 endf
 autocmd bufnewfile *.py call HeaderPython()
+
+function HeaderCpp()
+        call setline(1, "// Author:STEVEN")
+        call append(line("."),"//")
+        call append(line(".")*2, "#include<iostream>")
+        call append(line(".")*3, "using namespace std;")
+        normal G
+        normal 2o
+endf
+autocmd bufnewfile *.cpp call HeaderCpp()
