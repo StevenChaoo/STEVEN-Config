@@ -24,7 +24,7 @@ export LC_CTYPE="en_US.UTF-8"
 
 # ----------ZSH-THEME
 
-ZSH_THEME="ys"
+ZSH_THEME="agnoster"
 
 # ----------ZSH-PLUGIN
 
