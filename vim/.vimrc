@@ -1,58 +1,57 @@
-" ------------- 插件管理开始 -------------
-" 插件安装开始----------------------------
+" ------------------------------------------------------------PLUGINS INSTALL
 
 call plug#begin('~/.vim/plugged')
-" Bookmarks
+
+" BOOKMARKS
 Plug 'MattesGroeger/vim-bookmarks'
 
-" Undo Tree
+" UNDOTREE
 Plug 'mbbill/undotree'
 
-" IndentLine
+" INDENTLINE
 Plug 'Yggdroot/indentLine'
 
-" NERDTree
+" NERDTREE
 Plug 'scrooloose/nerdtree'
 
-" Airline
+" AIRLINE
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Commenter
+" COMMENTER
 Plug 'scrooloose/nerdcommenter'
 
-" Move
+" EASYMOTION
 Plug 'easymotion/vim-easymotion'
 
-" Asyncrun
+" ASYNCRUN
 Plug 'skywind3000/asyncrun.vim'
 
-" Tagbar
+" TAGBAR
 Plug 'majutsushi/tagbar'
 
-" Surround
+" SURROUND
 " Using <CR> to mark
 Plug 'tpope/vim-surround'
 
-" WildFire
+" WILDFIRE
 " Using S<Any> to append
 " Using cs<Former><Latter> to change
 Plug 'gcmt/wildfire.vim'
 
-" Coc.nvim
+" COC.NVIM
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 
-" cpp-highlight
+" CPP-HIGHLIGHT
 Plug 'octol/vim-cpp-enhanced-highlight'
 
-" Vim-startify
+" VIM-STARTIFY
 Plug 'mhinz/vim-startify'
 
 call plug#end()
 
-" 插件安装结束----------------------------
-" 插件配置开始----------------------------
+" ------------------------------------------------------------PLUGINS CONFIG
 
 " THEME
 set background=dark
@@ -99,7 +98,7 @@ let g:NERFSpaceDelims = 1
 " use ss to search code
 nmap ss <Plug>(easymotion-s2)
 
-" ASYNCRN
+" ASYNCRUN
 " use <Shift>R to quickrun
 let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
 nnoremap <silent> cn :cn<cr>        " next error
@@ -114,7 +113,7 @@ nnoremap <silent> co :copen<cr>      open quickfix window
 " use tb to open tagbar
 nnoremap tb :TagbarToggle<CR>
 
-" COC
+" COC.NVIM
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -149,24 +148,26 @@ let g:startify_custom_header = [
                         \"/_____/   |_|   |_____| |___/     |_____| |_|  \\_|", 
             \]
 
-" 插件配置结束----------------------------
-" ------------- 插件管理结束 -------------
-" ------------- 全局设置开始 -------------
-" SET LANGUAGE
+" ------------------------------------------------------------SET LANGUAGE
+
 language en_US
 
-" SET MENU
+" ------------------------------------------------------------SET MENU
+
 set wildmenu
 
-" USING SYSTEM CLIPBOARD
+" ------------------------------------------------------------USING SYSTEM CLIPBOARD
+
 set clipboard=unnamed
 
-" AUTO WRAP
+" ------------------------------------------------------------AUTO WRAP
+
 set textwidth=80
 set formatoptions+=mM
 set cc=81
 
-" MAP KEYS
+" ------------------------------------------------------------MAP KEYS
+
 let mapleader = ' '
 map Q :q<CR>
 map ; :
@@ -187,37 +188,45 @@ noremap <LEADER>- :split<CR>
 noremap <LEADER>= :vsplit<CR>
 noremap <LEADER>x :nohlsearch<CR>
 
-" AUTO INDENT
+" ------------------------------------------------------------AUTO INDENT
+
 filetype indent on
 
-" SET SYNTAX
+" ------------------------------------------------------------SET SYNTAX
+
 syntax on
 
-" SHOW LINE NUMBER
+" ------------------------------------------------------------SHOW LINE NUMBER
+
 set number
 set relativenumber
 set scrolloff=5
 set cursorline 
 
-" SET TAB
+" ------------------------------------------------------------SET TAB
+
 set tabstop=4
 set expandtab
 
-" OPEN MOUSE
+" ------------------------------------------------------------OPEN MOUSE
+
 set mouse=a
 
-" AUTO INDENT
+" ------------------------------------------------------------AUTO INDENT
+
 set autoindent
 set smartindent
 
-" HIGHLIGHT SEARCH
+" ------------------------------------------------------------HIGHLIGHT SEARCH
+"
 set hlsearch
 exec "nohlsearch"
 set incsearch
 set ignorecase
 set smartcase
 
-" AUTO RUN 
+" ------------------------------------------------------------AUTO RUN 
+
 noremap R :call CompileAndRun()<CR>
 func! CompileAndRun()
         exec "w"
@@ -237,7 +246,8 @@ func! CompileAndRun()
         endif
 endfunc
 
-" AUTO HEAD
+" ------------------------------------------------------------AUTO HEAD
+
 function HeaderPython()
 		call setline(1, "# Author:STEVEN")
         call append(line("."), "# -*- coding:UTF-8 -*-")
@@ -254,3 +264,24 @@ function HeaderCpp()
         normal 2o
 endf
 autocmd bufnewfile *.cpp call HeaderCpp()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

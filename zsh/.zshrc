@@ -1,57 +1,62 @@
 ZSH_DISABLE_COMPFIX="true"
 
-# ----------TMUX
+# ------------------------------------------------------------TMUX
+
 alias ta="tmux a"
 alias tk="tmux kill-session -t"
 alias tn="tmux new -s"
 
-# ----------GIT
+# ------------------------------------------------------------GIT
 
 # start a working area
 alias gc="git clone"
 alias gi="git init"
+
 # work on the current change
 alias ga="git add"
+
 # examine the history and state
 alias gd="git diff"
-alias gsa="git status" 
+alias gst="git status" 
+
 # grow, mark and tweak your common history
 alias gc-m="git commit -m"
 alias gb="git branch"
 alias gbm="git branch -m"
 alias gsw="git switch"
 alias gm="git merge"
+
 # collaborate
 alias grao="git remote add origin"
 alias gp="git push"
 
-# ----------PROXY
+# ------------------------------------------------------------PROXY
 
 alias proxy='export all_proxy=socks5://127.0.0.1:9091'
 alias unproxy='unset all_proxy'
 
-# ----------RANGER
+# ------------------------------------------------------------RANGER
 
 alias ra=ranger
 
-# ----------NEOFETCH
+# ------------------------------------------------------------NEOFETCH
 
 alias n=neofetch
 
-# ----------CLEAN SCREEN
+# ------------------------------------------------------------CLEAN SCREEN
 
 alias L=clear
 
-# ----------OH-MY-ZSH
+# ------------------------------------------------------------OH-MY-ZSH
 
 export ZSH="/Users/steven/.oh-my-zsh"
 export LC_CTYPE="en_US.UTF-8"
 
-# ----------ZSH-THEME
+# ------------------------------------------------------------ZSH-THEME
 
 ZSH_THEME="agnoster"
 
-# ----------ZSH-PLUGIN
+# ------------------------------------------------------------ZSH-PLUGIN
 
 plugins=(
 git
@@ -59,7 +64,7 @@ zsh-autosuggestions
 )
 source $ZSH/oh-my-zsh.sh
 
-# ----------ANACONDA
+# ------------------------------------------------------------ANACONDA
 
 __conda_setup="$('/Users/steven/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
@@ -73,20 +78,41 @@ else
 fi
 unset __conda_setup
 
-# ----------HOMEBREW
+# ------------------------------------------------------------HOMEBREW
 
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
-# ----------AUTOJUMP
+# ------------------------------------------------------------AUTOJUMP
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-# ----------FZF
+# ------------------------------------------------------------FZF
 
 export FZF_DEFAULT_OPTS='--preview "[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --color=always {} || highlisht -O ansi -l {} || cat {}) 2> /dev/null | head -500"'
 export FZF_COMPLETION_TRIGGER='\'
 export FZF_TMUX_HEIGHT='80%'
 export FZF_PREVIEW_COMMAND='[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --color=always {} || highlisht -O ansi -l {} || cat {}) 2> /dev/null | head -500'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
