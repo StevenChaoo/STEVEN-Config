@@ -23,7 +23,7 @@ alias gsw="git switch"
 alias gm="git merge"
 # collaborate
 alias grao="git remote add origin"
-alias gpo="git push origin"
+alias gp="git push"
 
 # ----------PROXY
 
