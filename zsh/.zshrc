@@ -1,5 +1,30 @@
 ZSH_DISABLE_COMPFIX="true"
 
+# ----------TMUX
+alias ta="tmux a"
+alias tk="tmux kill-session -t"
+alias tn="tmux new -s"
+
+# ----------GIT
+
+# start a working area
+alias gc="git clone"
+alias gi="git init"
+# work on the current change
+alias ga="git add"
+# examine the history and state
+alias gd="git diff"
+alias gsa="git status" 
+# grow, mark and tweak your common history
+alias gc-m="git commit -m"
+alias gb="git branch"
+alias gbm="git branch -m"
+alias gsw="git switch"
+alias gm="git merge"
+# collaborate
+alias grao="git remote add origin"
+alias gpo="git push origin"
+
 # ----------PROXY
 
 alias proxy='export all_proxy=socks5://127.0.0.1:9091'
