@@ -46,6 +46,9 @@ Plug 'honza/vim-snippets'
 " cpp-highlight
 Plug 'octol/vim-cpp-enhanced-highlight'
 
+" Vim-startify
+Plug 'mhinz/vim-startify'
+
 call plug#end()
 
 " 插件安装结束----------------------------
@@ -57,12 +60,14 @@ colorscheme darcula
 
 " BOOKMARK
 " use mm to append a bookmark
-let g:bookmark_sign = '>>'
-let g:bookmark_annotation_sign = '##'
+" use mi to append a annotation
+" use ma to search bookmarks
+" use mx to clean all bookmarks
+" use mn to turn to next bookmark
+" use mp to turn to previous bookmark
+let g:bookmark_sign = '⚑'
+let g:bookmark_annotation_sign = '☰'
 let g:bookmark_center = 1
-let g:bookmark_highlight_lines = 1
-highlight link BookmarkLine SpellBad
-highlight link BookmarkAnnotationLine SpellBad
 
 " UNDOTREE
 " use X to open undotree
@@ -77,7 +82,6 @@ let g:indent_guides_start_level = 2
 
 " NERDTREE
 " use tt to open nerdtree
-nnoremap tt :NERDTreeMirror<CR>
 nnoremap tt :NERDTreeToggle<CR>
 
 " AIRLINE
@@ -87,8 +91,8 @@ let g:airline#extensions#tabline#enabled = 1
 nnoremap <tab> :bn<cr>
 
 " COMMENTER
-" use \cc to comment code
-" use \cu to uncomment code
+" use <leader>cc to comment code
+" use <leader>cu to uncomment code
 let g:NERFSpaceDelims = 1
 
 " EASYMOTION
@@ -116,13 +120,34 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" VIM-STARTIFY
+let g:startify_bookmarks            = [
+            \ '~/.zshrc',
+            \ '~/.vimrc',
+            \ '~/.config/ranger/rc.conf',
+            \]
+let g:startify_files_number=10
+let g:startify_change_to_dir = 1
+let g:startify_lists = [
+        \ { 'type': 'files',     'header': ['   MRU']            },
+        \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+        \ { 'type': 'sessions',  'header': ['   Sessions']       },
+        \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+        \ { 'type': 'commands',  'header': ['   Commands']       },
+        \ ]
+let g:startify_custom_header = [
+                        \" _____   _____   _____   _     _   _____   __   _ ", 
+                        \"/  ___/ |_   _| | ____| | |   / / | ____| |  \\ | |", 
+                        \"| |___    | |   | |__   | |  / /  | |__   |   \\| |", 
+                        \"\\___  \\   | |   |  __|  | | / /   |  __|  | |\\   |", 
+                        \" ___| |   | |   | |___  | |/ /    | |___  | | \\  |", 
+                        \"/_____/   |_|   |_____| |___/     |_____| |_|  \\_|", 
+            \]
 
 " 插件配置结束----------------------------
 " ------------- 插件管理结束 -------------
@@ -160,6 +185,7 @@ noremap K 5k
 noremap s <nop>
 noremap <LEADER>- :split<CR>
 noremap <LEADER>= :vsplit<CR>
+noremap <LEADER>x :nohlsearch<CR>
 
 " AUTO INDENT
 filetype indent on
