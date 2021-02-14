@@ -46,8 +46,12 @@ Plug 'honza/vim-snippets'
 " CPP-HIGHLIGHT
 Plug 'octol/vim-cpp-enhanced-highlight'
 
-" VIM-STARTIFY
-Plug 'mhinz/vim-startify'
+" DASHBOARD
+Plug 'glepnir/dashboard-nvim'
+
+" FZF
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -86,7 +90,6 @@ nnoremap tt :NERDTreeToggle<CR>
 " AIRLINE
 let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#buffer_nr_show = 1
 nnoremap <tab> :bn<cr>
 
 " COMMENTER
@@ -104,10 +107,10 @@ let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status
 nnoremap <silent> cn :cn<cr>        " next error
 nnoremap <silent> cp :cp<cr>        " previous error
 nnoremap <silent> cx :cclose<cr>    " closse quicfix window
-nnoremap <silent> cl :cl<cr>        " list all errors
 nnoremap <silent> cc :cc<cr>        " show detailed error information
 nnoremap <silent> cw :cw<cr>        " open error window if has errors
 nnoremap <silent> co :copen<cr>      open quickfix window
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " TAGBAR
 " use tb to open tagbar
@@ -124,29 +127,33 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" VIM-STARTIFY
-let g:startify_bookmarks            = [
-            \ '~/.zshrc',
-            \ '~/.vimrc',
-            \ '~/.config/ranger/rc.conf',
-            \]
-let g:startify_files_number=10
-let g:startify_change_to_dir = 1
-let g:startify_lists = [
-        \ { 'type': 'files',     'header': ['   MRU']            },
-        \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
-        \ { 'type': 'sessions',  'header': ['   Sessions']       },
-        \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-        \ { 'type': 'commands',  'header': ['   Commands']       },
-        \ ]
-let g:startify_custom_header = [
-                        \" _____   _____   _____   _     _   _____   __   _ ", 
-                        \"/  ___/ |_   _| | ____| | |   / / | ____| |  \\ | |", 
-                        \"| |___    | |   | |__   | |  / /  | |__   |   \\| |", 
-                        \"\\___  \\   | |   |  __|  | | / /   |  __|  | |\\   |", 
-                        \" ___| |   | |   | |___  | |/ /    | |___  | | \\  |", 
-                        \"/_____/   |_|   |_____| |___/     |_____| |_|  \\_|", 
-            \]
+" DASHBOARD
+let g:dashboard_default_executive ='fzf'
+let g:dashboard_custom_header=[
+        \' ██████╗ ████████╗ ███████╗ ██╗   ██╗ ███████╗ ██╗   ██╗',
+        \'██╔════╝    ██╔══╝ ██╔════╝ ██║   ██║ ██╔════╝ ███╗  ██║', 
+        \'╚██████╗    ██║    █████╗   ██║   ██║ █████╗   █╔██╗ ██║', 
+        \'  ╚═══██╗   ██║    ██╔══╝   ╚██╗ ██╔╝ ██╔══╝   █║╚██╗██║', 
+        \' ██████╔╝   ██║    ███████╗  ╚████╔╝  ███████╗ █║ ╚████║', 
+        \' ╚═════╝    ╚═╝    ╚══════╝   ╚═══╝   ╚══════╝ ╚╝  ╚═══╝',
+        \]
+let g:dashboard_custom_footer=[
+        \'              steven@StevenChaoo',
+        \'',
+        \'OS: macOS 11.2 20D64 x86_64',
+        \'Host: MacBookPro15,1',
+        \'Resolution: 1680x1050',
+        \'WM: Quartz Compositor',
+        \"Terminal: Apple_Terminal",
+        \"CPU: Intel i7-8750H (12) @ 2.20GHz",
+        \"GPU: Intel UHD Graphics 630, Radeon Pro 555X",
+        \"",
+        \]
+let g:dashboard_custom_section={
+  \ 'buffer_list': {
+      \ 'description': ['FIND FILES'],
+      \ 'command': 'Files'}
+  \ }
 
 " ------------------------------------------------------------SET LANGUAGE
 
