@@ -1,0 +1,26 @@
+ ██████╗ ████████╗ ███████╗ ██╗   ██╗ ███████╗ ██╗   ██╗
+██╔════╝    ██╔══╝ ██╔════╝ ██║   ██║ ██╔════╝ ███╗  ██║
+╚██████╗    ██║    █████╗   ██║   ██║ █████╗   █╔██╗ ██║
+  ╚═══██╗   ██║    ██╔══╝   ╚██╗ ██╔╝ ██╔══╝   █║╚██╗██║
+ ██████╔╝   ██║    ███████╗  ╚████╔╝  ███████╗ █║ ╚████║
+ ╚═════╝    ╚═╝    ╚══════╝   ╚═══╝   ╚══════╝ ╚╝  ╚═══╝
+
+
+
+                    'c.          
+                 ,xNMM.          
+               .OMMMMo           steven@StevenChaoo
+               OMMM0,            ------------------
+     .;loddo:' loolloddol;.      OS: macOS 11.2 20D64 x86_64
+   cKMMMMMMMMMMNWMMMMMMMMMM0:    Host: MacBookPro15,1
+ .KMMMMMMMMMMMMMMMMMMMMMMMWd.    Shell: zsh 5.8
+ XMMMMMMMMMMMMMMMMMMMMMMMX.      Resolution: 1680x1050
+;MMMMMMMMMMMMMMMMMMMMMMMM:       DE: Aqua
+:MMMMMMMMMMMMMMMMMMMMMMMM:       WM: Quartz Compositor
+.MMMMMMMMMMMMMMMMMMMMMMMMX.      WM Theme: Blue (Dark)
+ kMMMMMMMMMMMMMMMMMMMMMMMMWd.    Terminal: Apple_Terminal
+ .XMMMMMMMMMMMMMMMMMMMMMMMMMMk   Terminal Font: HackNerdFontComplete-Regular
+  .XMMMMMMMMMMMMMMMMMMMMMMMMK.   CPU: Intel i7-8750H (12) @ 2.20GHz
+    kMMMMMMMMMMMMMMMMMMMMMMd     GPU: Intel UHD Graphics 630, Radeon Pro 555X
+     ;KMMMMMMMWXXWMMMMMMMk.      
+       .cooc,.    .,coo:.        
