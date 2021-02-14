@@ -49,9 +49,8 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 " DASHBOARD
 Plug 'glepnir/dashboard-nvim'
 
-" FZF
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" STARTIFY
+"Plug 'mhinz/vim-startify'
 
 call plug#end()
 
@@ -128,7 +127,6 @@ function! s:check_back_space() abort
 endfunction
 
 " DASHBOARD
-let g:dashboard_default_executive ='fzf'
 let g:dashboard_custom_header=[
         \' ██████╗ ████████╗ ███████╗ ██╗   ██╗ ███████╗ ██╗   ██╗',
         \'██╔════╝    ██╔══╝ ██╔════╝ ██║   ██║ ██╔════╝ ███╗  ██║', 
@@ -138,7 +136,8 @@ let g:dashboard_custom_header=[
         \' ╚═════╝    ╚═╝    ╚══════╝   ╚═══╝   ╚══════╝ ╚╝  ╚═══╝',
         \]
 let g:dashboard_custom_footer=[
-        \'              steven@StevenChaoo',
+        \'--------------------------------------------',
+        \'             steven@StevenChaoo',
         \'',
         \'OS: macOS 11.2 20D64 x86_64',
         \'Host: MacBookPro15,1',
@@ -150,10 +149,52 @@ let g:dashboard_custom_footer=[
         \"",
         \]
 let g:dashboard_custom_section={
-  \ 'buffer_list': {
-      \ 'description': ['FIND FILES'],
-      \ 'command': 'Files'}
+  \ 'session': {
+      \ 'description': ['☰ LOAD SESSION'],
+      \ 'command': 'SessionLoad'},
+  \ 'create': {
+      \ 'description': ['☰ CREATE FILE '],
+      \ 'command': 'vi ~/File/Code/Demo/NewFile'},
+  \ 'vimrc': {
+      \ 'description': [' VIMRC'],
+      \ 'command': 'vi  ~/.vimrc'},
+  \ 'zshrc': {
+      \ 'description': [' ZSHRC'],
+      \ 'command': 'vi  ~/.zshrc'}
   \ }
+
+" STARTIFY
+"let g:startify_bookmarks            = [  
+"\ '~/.vimrc',
+"\ '~/.zshrc',
+"\]  
+"let g:startify_custom_header=[
+        "\' ██████╗ ████████╗ ███████╗ ██╗   ██╗ ███████╗ ██╗   ██╗',
+        "\'██╔════╝    ██╔══╝ ██╔════╝ ██║   ██║ ██╔════╝ ███╗  ██║', 
+        "\'╚██████╗    ██║    █████╗   ██║   ██║ █████╗   █╔██╗ ██║', 
+        "\'  ╚═══██╗   ██║    ██╔══╝   ╚██╗ ██╔╝ ██╔══╝   █║╚██╗██║', 
+        "\' ██████╔╝   ██║    ███████╗  ╚████╔╝  ███████╗ █║ ╚████║', 
+        "\' ╚═════╝    ╚═╝    ╚══════╝   ╚═══╝   ╚══════╝ ╚╝  ╚═══╝',
+        "\'',
+        "\'',
+        "\'',
+        "\]
+"let g:startify_custom_footer=[
+        "\'',
+        "\'',
+        "\'',
+        "\'--------------------------------------------',
+        "\'             steven@StevenChaoo',
+        "\'',
+        "\'OS: macOS 11.2 20D64 x86_64',
+        "\'Host: MacBookPro15,1',
+        "\'Resolution: 1680x1050',
+        "\'WM: Quartz Compositor',
+        "\"Terminal: Apple_Terminal",
+        "\"CPU: Intel i7-8750H (12) @ 2.20GHz",
+        "\"GPU: Intel UHD Graphics 630, Radeon Pro 555X",
+        "\"",
+        "\]
 
 " ------------------------------------------------------------SET LANGUAGE
 
