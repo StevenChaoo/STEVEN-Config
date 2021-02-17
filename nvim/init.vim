@@ -1,6 +1,9 @@
+
+let mapleader = ' '
+
 " ------------------------------------------------------------PLUGINS INSTALL
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " BOOKMARKS
 Plug 'MattesGroeger/vim-bookmarks'
@@ -31,12 +34,9 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'majutsushi/tagbar'
 
 " SURROUND
-" Using <CR> to mark
 Plug 'tpope/vim-surround'
 
 " WILDFIRE
-" Using S<Any> to append
-" Using cs<Former><Latter> to change
 Plug 'gcmt/wildfire.vim'
 
 " COC.NVIM
@@ -55,13 +55,18 @@ Plug 'junegunn/fzf.vim'
 " SNIPPETS
 Plug 'honza/vim-snippets'
 
+" MARKDOWN
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+" TABULAR
+Plug 'godlygeek/tabular'
+
+" TABLE-MODE
+Plug 'dhruvasagar/vim-table-mode'
+
 call plug#end()
 
 " ------------------------------------------------------------PLUGINS CONFIG
-
-" THEME
-set background=dark
-colorscheme darcula
 
 " BOOKMARK
 " use mm to append a bookmark
@@ -70,19 +75,22 @@ colorscheme darcula
 " use mx to clean all bookmarks
 " use mn to turn to next bookmark
 " use mp to turn to previous bookmark
-let g:bookmark_sign = '⚑'
+let g:bookmark_sign            = '⚑'
 let g:bookmark_annotation_sign = '☰'
-let g:bookmark_center = 1
+let g:bookmark_center          = 1
 
 " UNDOTREE
 " use X to open undotree
 noremap <silent> X :UndotreeToggle<CR>
-let g:undotree_DiffAutoOpen = 1
+let g:undotree_DiffAutoOpen       = 1
 let g:undotree_SetFocusWhenToggle = 1
-let g:undotree_ShortIndicators = 1
+let g:undotree_ShortIndicators    = 1
+let g:undotree_WindowLayout       = 2
+let g:undotree_DiffpanelHeight    = 8
+let g:undotree_SplitWidth         = 24
 
 " INDENTLINE
-let g:indent_guides_guide_size = 1
+let g:indent_guides_guide_size  = 1
 let g:indent_guides_start_level = 2
 
 " NERDTREE
@@ -90,9 +98,10 @@ let g:indent_guides_start_level = 2
 nnoremap tt :NERDTreeToggle<CR>
 
 " AIRLINE
-let g:airline_powerline_fonts = 0
-let g:airline#extensions#tabline#enabled = 1
+" use <tab> to swtich tabs
 nnoremap <tab> :bn<cr>
+let g:airline_powerline_fonts            = 0
+let g:airline#extensions#tabline#enabled = 1
 
 " COMMENTER
 " use <leader>cc to comment code
@@ -101,22 +110,29 @@ let g:NERFSpaceDelims = 1
 
 " EASYMOTION
 " use ss to search code
-nmap ss <Plug>(easymotion-s2)
+nnoremap ss <Plug>(easymotion-s2)
 
 " ASYNCRUN
-" use <Shift>R to quickrun
-let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
+" use <F5> to quickrun
 nnoremap <silent> cn :cn<cr>        " next error
 nnoremap <silent> cp :cp<cr>        " previous error
 nnoremap <silent> cx :cclose<cr>    " closse quicfix window
 nnoremap <silent> cc :cc<cr>        " show detailed error information
 nnoremap <silent> cw :cw<cr>        " open error window if has errors
 nnoremap <silent> co :copen<cr>      open quickfix window
+let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " TAGBAR
 " use tb to open tagbar
 nnoremap tb :TagbarToggle<CR>
+
+" SURROUND
+" use <CR> to mark
+
+" WILDFIRE
+" use S<Any> to append
+" use cs<Former><Latter> to change
 
 " COC.NVIM
 inoremap <silent><expr> <TAB>
@@ -129,6 +145,8 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+" CPP-HIGHLIGHT
+
 " DASHBOARD
 let g:dashboard_custom_header=[
         \' ██████╗ ████████╗ ███████╗ ██╗   ██╗ ███████╗ ██╗   ██╗',
@@ -139,16 +157,15 @@ let g:dashboard_custom_header=[
         \' ╚═════╝    ╚═╝    ╚══════╝   ╚═══╝   ╚══════╝ ╚╝  ╚═══╝',
         \]
 let g:dashboard_custom_footer=[
-        \'--------------------------------------------',
-        \'             steven@StevenChaoo',
+        \'                 steven@StevenChaoo',
         \'',
-        \'OS: macOS 11.2 20D64 x86_64',
-        \'Host: MacBookPro15,1',
-        \'Resolution: 1680x1050',
-        \'WM: Quartz Compositor',
-        \"Terminal: Apple_Terminal",
-        \"CPU: Intel i7-8750H (12) @ 2.20GHz",
-        \"GPU: Intel UHD Graphics 630, Radeon Pro 555X",
+        \'OS         : macOS 11.2 20D64 x86_64',
+        \'Host       : MacBookPro15,1',
+        \'Resolution : 1680x1050',
+        \'WM         : Quartz Compositor',
+        \"Terminal   : Apple_Terminal",
+        \"CPU        : Intel i7-8750H (12) @ 2.20GHz",
+        \"GPU        : Intel UHD Graphics 630, Radeon Pro 555X",
         \"",
         \]
 let g:dashboard_custom_section={
@@ -168,6 +185,27 @@ let g:dashboard_custom_section={
       \ 'description': [' ZSHRC'],
       \ 'command': 'vi  ~/.zshrc'}
   \ }
+
+" FZF
+" use <LEADER>H to open MRU files
+" use <LEADER>F to open files in ~/File/Code/
+nnoremap <LEADER>H :History<CR>
+nnoremap <LEADER>F :FZF ~/File/Code/<CR>
+
+" SNIPPETS
+
+" MARKDOWN
+" use :MarkdownPreview to preview md file
+
+" TABULAR
+" use :Tabularize<Any> to tabularize
+
+" TABLE-MODE
+" use <LEADER>tm to enter table mode
+
+" ------------------------------------------------------------THEME
+
+colorscheme darcula
 
 " ------------------------------------------------------------SET LANGUAGE
 
@@ -189,7 +227,6 @@ set cc=81
 
 " ------------------------------------------------------------MAP KEYS
 
-let mapleader = ' '
 map Q :q<CR>
 map ; :
 map <LEADER>l <C-w>l
@@ -208,6 +245,8 @@ noremap s <nop>
 noremap <LEADER>- :split<CR>
 noremap <LEADER>= :vsplit<CR>
 noremap <LEADER>x :nohlsearch<CR>
+noremap S :w<CR>
+noremap Q :q<CR>
 
 " ------------------------------------------------------------AUTO INDENT
 
@@ -248,7 +287,7 @@ set smartcase
 
 " ------------------------------------------------------------AUTO RUN 
 
-noremap R :call CompileAndRun()<CR>
+noremap <F5> :call CompileAndRun()<CR>
 func! CompileAndRun()
         exec "w"
         if &filetype == 'python'
@@ -264,6 +303,8 @@ func! CompileAndRun()
 		elseif &filetype == 'java'
 				exec "!javac %"
 				exec "!time java %<"
+        elseif &filetype == 'markdown'
+                exec "MarkdownPreview"
         endif
 endfunc
 
