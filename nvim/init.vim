@@ -279,10 +279,6 @@ noremap <LEADER>x :nohlsearch<CR>
 noremap S :w<CR>
 noremap Q :q<CR>
 
-" ------------------------------------------------------------AUTO INDENT
-
-filetype indent on
-
 " ------------------------------------------------------------SET SYNTAX
 
 syntax on
@@ -307,6 +303,7 @@ set mouse=a
 
 set autoindent
 set smartindent
+filetype indent on
 
 " ------------------------------------------------------------HIGHLIGHT SEARCH
 "
