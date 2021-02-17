@@ -1,3 +1,19 @@
+" ------------------------------------------------------------HAEDER
+
+" Author: StevenChaoo
+" Required: [
+"       \ neovim,
+"       \ node,
+"       \ autojump,
+"       \ bat,
+"       \ ctags,
+"       \ fzf,
+"       \ font-hack-nerd-font,
+"       \ ranger,
+"       \ neofetch,
+"       \ tmux]
+
+" ------------------------------------------------------------LEADER KEY
 
 let mapleader = ' '
 
@@ -53,7 +69,7 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'majutsushi/tagbar'
 
 " SURROUND
-" use <CR> to mark
+" use <CR> to select
 Plug 'tpope/vim-surround'
 
 " WILDFIRE
