@@ -1,5 +1,9 @@
 ZSH_DISABLE_COMPFIX="true"
 
+# ------------------------------------------------------------NVIM
+
+alias vi="nvim"
+
 # ------------------------------------------------------------TMUX
 
 alias ta="tmux a"
@@ -97,9 +101,6 @@ export FZF_TMUX_HEIGHT='80%'
 export FZF_PREVIEW_COMMAND='[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --color=always {} || highlisht -O ansi -l {} || cat {}) 2> /dev/null | head -500'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# ------------------------------------------------------------NVIM
-
-alias vi="nvim"
 
 
 
