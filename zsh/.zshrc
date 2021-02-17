@@ -71,6 +71,9 @@ source $ZSH/oh-my-zsh.sh
 
 # ------------------------------------------------------------ANACONDA
 
+alias cc="conda create -n"
+alias cac="conda activate"
+alias cde="conda deactivate"
 __conda_setup="$('/Users/steven/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
