@@ -1,6 +1,6 @@
 " ------------------------------------------------------------HAEDER
 
-" Author: StevenChaoo
+" Author: StevenChaoo <https://github.com/StevenChaoo>
 " Required: [
 "       \ neovim,
 "       \ node,
@@ -354,24 +354,3 @@ function HeaderCpp()
         normal 2o
 endf
 autocmd bufnewfile *.cpp call HeaderCpp()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
