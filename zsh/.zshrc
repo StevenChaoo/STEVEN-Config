@@ -30,7 +30,7 @@ alias tn="tmux new -s"
 # ------------------------------------------------------------GIT
 
 # start a working area
-alias gc="git clone"
+alias gclone="git clone"
 alias ginit="git init"
 
 # work on the current change
@@ -38,19 +38,18 @@ alias gall="git add ."
 alias gadd="git add"
 
 # examine the history and state
-alias gd="git diff"
-alias gst="git status" 
+alias gdiff="git diff"
+alias gstatus="git status" 
 
 # grow, mark and tweak your common history
-alias gcmt="git commit -m"
-alias gb="git branch"
-alias gbm="git branch -m"
-alias gsw="git switch"
-alias gm="git merge"
+alias gcommit="git commit -m"
+alias gbranch="git branch"
+alias gcheck="git checkout"
+alias gmerge="git merge"
 
 # collaborate
-alias grmt="git remote add origin"
-alias gp="git push"
+alias gremote="git remote add origin"
+alias gpush="git push"
 
 # ------------------------------------------------------------PROXY
 
