@@ -119,3 +119,10 @@ export FZF_COMPLETION_TRIGGER='\'
 export FZF_TMUX_HEIGHT='80%'
 export FZF_PREVIEW_COMMAND='[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --color=always {} || highlisht -O ansi -l {} || cat {}) 2> /dev/null | head -500'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# ------------------------------------------------------------GOLANG
+
+export GOPATH=/Users/steven/File/Code/Go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
+export GOPROXY=https://goproxy.cn
