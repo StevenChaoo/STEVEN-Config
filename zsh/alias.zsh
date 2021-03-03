@@ -3,6 +3,7 @@ alias lg="lazygit"
 
 # NVIM
 alias vi="nvim"
+alias vim="nvim"
 
 # TMUX
 alias ta="tmux a"
@@ -17,12 +18,14 @@ alias ginit="git init"
 alias gall="git add ."
 alias gadd="git add"
 # examine the history and state
-alias gdiff="git diff"
+alias glog="git log"
+alias greset="git reset --hard"
 alias gstatus="git status" 
 # grow, mark and tweak your common history
 alias gcommit="git commit -m"
+alias gamend="git commit --amend --no-edit"
 alias gbranch="git branch"
-alias gcheck="git checkout"
+alias gswitch="git switch"
 alias gmerge="git merge"
 # collaborate
 alias gremote="git remote add origin"
@@ -45,3 +48,6 @@ alias L=clear
 alias cc="conda create -n"
 alias cac="conda activate"
 alias cde="conda deactivate"
+
+# CPP
+alias cg="g++ -o"

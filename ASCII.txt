@@ -11,7 +11,7 @@
                  ,xNMM.          
                .OMMMMo           steven@StevenChaoo
                OMMM0,            ------------------
-     .;loddo:' loolloddol;.      OS: macOS 11.2 20D64 x86_64
+     .;loddo:' loolloddol;.      OS: macOS 11.2.2 20D64 x86_64
    cKMMMMMMMMMMNWMMMMMMMMMM0:    Host: MacBookPro15,1
  .KMMMMMMMMMMMMMMMMMMMMMMMWd.    Shell: zsh 5.8
  XMMMMMMMMMMMMMMMMMMMMMMMX.      Resolution: 1680x1050
