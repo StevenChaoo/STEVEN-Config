@@ -105,4 +105,7 @@ Plug 'ryanoasis/vim-devicons'
 " NERDTREE-HIGHLIGHT
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
+" CURSORWORD
+Plug 'itchyny/vim-cursorword'
+
 call plug#end()

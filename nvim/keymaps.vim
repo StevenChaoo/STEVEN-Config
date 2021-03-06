@@ -20,6 +20,6 @@ noremap S :w<CR>
 noremap Q :q<CR>
 noremap \, /<=><CR>:nohlsearch<CR>c3l
 
-inoremap \* /*<CR><ESC>xi*/<ESC>I<CR><ESC>ki
-inoremap \' '''<CR><CR>'''<ESC>ki
+inoremap \\* /*<CR><ESC>xi*/<ESC>I<CR><ESC>ki
+inoremap \''' '''<CR><CR>'''<ESC>ki
 inoremap \, <ESC>/<=><CR>:nohlsearch<CR>c3l

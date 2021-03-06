@@ -47,7 +47,18 @@ alias L=clear
 # ANACONDA
 alias cc="conda create -n"
 alias cac="conda activate"
-alias cde="conda deactivate"
+alias cdeac="conda deactivate"
 
 # CPP
-alias cg="g++ -o"
+alias cg="g++ -Wall -o"
+alias cen="g++ -Wall -o test test.cpp"
+alias cde="./test"
+
+# FZF
+alias his="history | fzf"
+
+# WHEN CHANGED
+# python
+alias testpy="when-changed -v -r -1 test.py 'python test.py'"
+# cpp
+alias testcpp="when-changed -v -r -1 test.cpp 'g++ -o test test.cpp | ./test'"
