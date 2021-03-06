@@ -3,15 +3,15 @@
 " Author: StevenChaoo <https://github.com/StevenChaoo>
 " Required: [
 "       \ neovim,
-"       \ node,
 "       \ autojump,
 "       \ bat,
 "       \ ctags,
 "       \ fzf,
-"       \ font-hack-nerd-font,
 "       \ ranger,
 "       \ neofetch,
 "       \ lazygit,
+"       \ anaconda,
+"       \ golang,
 "       \ tmux]
 
 " ------------------------------------------------------------SETTINGS
