@@ -12,6 +12,7 @@
 #       \ lazygit,
 #       \ anaconda,
 #       \ golang,
+#       \ clang-format,
 #       \ tmux]
 
 # ------------------------------------------------------------CONFIG

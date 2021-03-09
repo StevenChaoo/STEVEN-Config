@@ -8,8 +8,10 @@ map <right> :vertical resize+5<CR>
 map <up> :res+5<CR>
 map <down> :res-5<CR>
 
-noremap H 0
-noremap L $
+noremap [ 0
+noremap ] $
+noremap H 5h
+noremap L 5l
 noremap J 5j
 noremap K 5k
 noremap s <nop>

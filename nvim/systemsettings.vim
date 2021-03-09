@@ -29,7 +29,6 @@ set cursorline
 
 " SET TAB
 set tabstop=4
-set expandtab
 
 " OPEN MOUSE
 set mouse=a

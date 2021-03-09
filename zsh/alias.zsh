@@ -29,6 +29,7 @@ alias gswitch="git switch"
 alias gmerge="git merge"
 # collaborate
 alias gremote="git remote add origin"
+alias gfirst="git push -u origin master"
 alias gpush="git push"
 
 # PROXY
@@ -61,4 +62,4 @@ alias his="history | fzf"
 # python
 alias testpy="when-changed -v -r -1 test.py 'python test.py'"
 # cpp
-alias testcpp="when-changed -v -r -1 test.cpp 'g++ -o test test.cpp | ./test'"
+alias testcpp="when-changed -v -r -1 test.cpp 'g++ -o test test.cpp'"

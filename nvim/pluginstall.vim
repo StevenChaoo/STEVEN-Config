@@ -108,4 +108,8 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " CURSORWORD
 Plug 'itchyny/vim-cursorword'
 
+" CLANG-FORMAT
+" use :ClangFormat to format code.
+Plug 'rhysd/vim-clang-format'
+
 call plug#end()

@@ -70,7 +70,7 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 inoremap <silent><expr> <C-o> coc#refresh()
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 nnoremap <silent> ep <Plug>(coc-diagnostic-prev)
 nnoremap <silent> en <Plug>(coc-diagnostic-next)
@@ -157,3 +157,7 @@ nnoremap \\ :Calendar -view=clock -position=here<CR>
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
+
+" CLANG-FORMAT
+let g:clang_format#code_style = "google"
+let g:clang_format#auto_format = 1
