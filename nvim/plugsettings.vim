@@ -159,5 +159,5 @@ let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 
 " CLANG-FORMAT
-let g:clang_format#code_style = "google"
+let g:clang_format#code_style = "chromium"
 let g:clang_format#auto_format = 1

@@ -63,3 +63,6 @@ alias his="history | fzf"
 alias testpy="when-changed -v -r -1 test.py 'python test.py'"
 # cpp
 alias testcpp="when-changed -v -r -1 test.cpp 'g++ -o test test.cpp'"
+
+# MARKDOWN
+alias toc="gh-md-toc"
