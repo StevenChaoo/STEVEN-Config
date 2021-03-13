@@ -17,8 +17,8 @@
 
 " ------------------------------------------------------------SETTINGS
 
+source ~/.config/nvim/systemsettings.vim
 source ~/.config/nvim/pluginstall.vim
 source ~/.config/nvim/plugsettings.vim
-source ~/.config/nvim/systemsettings.vim
 source ~/.config/nvim/languagesettings.vim
 source ~/.config/nvim/keymaps.vim
