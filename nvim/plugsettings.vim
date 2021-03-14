@@ -23,8 +23,7 @@ autocmd BufEnter * if 0 == len(filter(range(1, winnr('$')), 'empty(getbufvar(win
 
 " AIRLINE
 nnoremap <tab> :bn<cr>
-nnoremap <leader>n :bn<cr>
-nnoremap <leader>p :bp<cr>
+nnoremap <leader><tab> :bp<cr>
 let g:airline_powerline_fonts            = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'base16_google'
