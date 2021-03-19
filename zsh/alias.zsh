@@ -31,6 +31,7 @@ alias gmerge="git merge"
 alias gremote="git remote add origin"
 alias gfirst="git push -u origin master"
 alias gpush="git push"
+alias gfpush="git push -f"
 
 # PROXY
 alias proxy='export all_proxy=socks5://127.0.0.1:9091'
