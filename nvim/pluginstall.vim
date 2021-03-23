@@ -21,7 +21,9 @@ Plug 'mbbill/undotree'
 Plug 'scrooloose/nerdtree'
 
 " AIRLINE
-" use <tab> to swtich tabs
+" use <tab> to swtich to next tab
+" use <leader><tab> to swtich to previous tab
+" use <leader>q to close current tab
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 

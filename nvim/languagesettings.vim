@@ -22,14 +22,14 @@ endfunc
 
 " AUTO HEAD
 function HeaderPython()
-		call setline(1, "# Author:STEVEN")
+		call setline(1, "# Author: StevenChaoo")
         call append(line("."), "# -*- coding:UTF-8 -*-")
         normal G
         normal 3o
 endf
 autocmd bufnewfile *.py call HeaderPython()
 function HeaderCpp()
-        call setline(1, "// Author:STEVEN")
+        call setline(1, "// Author: StevenChaoo")
         call append(line("."),"//")
         call append(line(".")*2, "#include<iostream>")
         call append(line(".")*3, "using namespace std;")
@@ -38,7 +38,7 @@ function HeaderCpp()
 endf
 autocmd bufnewfile *.cpp call HeaderCpp()
 function HeaderGo()
-        call setline(1, "// Author:STEVEN")
+        call setline(1, "// Author: StevenChaoo")
         normal G
         normal 2o
 endf

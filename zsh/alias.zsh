@@ -67,3 +67,7 @@ alias testcpp="when-changed -v -r -1 test.cpp 'g++ -o test test.cpp'"
 
 # MARKDOWN
 alias toc="gh-md-toc"
+
+# SOURCE
+alias sz="source ~/.zshrc"
+alias sn="source ~/.config/nvim/init.vim"
