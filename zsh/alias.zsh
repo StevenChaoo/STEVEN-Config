@@ -71,3 +71,10 @@ alias toc="gh-md-toc"
 # SOURCE
 alias sz="source ~/.zshrc"
 alias sn="source ~/.config/nvim/init.vim"
+
+# HEXO
+alias hg="hexo g"
+alias hs="hexo s"
+alias hd="hexo d"
+alias hn="hexo new post"
+alias hc="hexo clean"

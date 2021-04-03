@@ -24,7 +24,7 @@ syntax on
 " SHOW LINE NUMBER
 set number
 set relativenumber
-set scrolloff=5
+set scrolloff=10
 set cursorline 
 
 " SET TAB
