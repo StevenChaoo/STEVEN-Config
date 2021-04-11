@@ -78,3 +78,6 @@ alias hs="hexo s"
 alias hd="hexo d"
 alias hn="hexo new post"
 alias hc="hexo clean"
+
+# SERVER
+alias ubuntu="ssh steven@192.168.50.180"
