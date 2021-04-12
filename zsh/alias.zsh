@@ -81,3 +81,6 @@ alias hc="hexo clean"
 
 # SERVER
 alias ubuntu="ssh steven@192.168.50.180"
+
+# TOP
+alias top="gotop"

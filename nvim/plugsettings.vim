@@ -90,7 +90,7 @@ let g:dashboard_custom_header=[
         \' ╚═════╝    ╚═╝    ╚══════╝   ╚═══╝   ╚══════╝ ╚╝  ╚═══╝',
         \]
 let g:dashboard_custom_footer=[
-        \'                 steven@StevenChaoo',
+        \'                 steven@StevenChaoo',
         \'',
         \'OS         : macOS 11.2.2 20D64 x86_64',
         \'Host       : MacBookPro15,1',
