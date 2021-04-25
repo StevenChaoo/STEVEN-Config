@@ -53,8 +53,7 @@ alias cdeac="conda deactivate"
 
 # CPP
 alias cg="g++ -Wall -o"
-alias cen="g++ -Wall -o test test.cpp"
-alias cde="./test"
+alias cen="g++ -Wall -o test test.cpp && ./test"
 
 # FZF
 alias his="history | fzf"

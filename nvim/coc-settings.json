@@ -1,10 +1,9 @@
 {
 	"coc.preferences.extensionUpdateCheck": "daily",
-	"suggest.noselect": false,
-	"suggest.enablePreselect": false,
-	"codeLens.enable": true,
-	"suggest.autoTrigger": "none",
-	"diagnostic.refreshOnInsertMode": false,
+	"suggest.noselect": true,
+	"suggest.enablePreselect": true,
+	"suggest.autoTrigger": "always",
+	"diagnostic.refreshOnInsertMode":false,
 	"suggest.completionItemKindLabels": {
 		"class": "\uf0e8",
 		"color": "\ue22b",
@@ -36,7 +35,6 @@
 	"diagnostic.warningSign": "\uf071",
 	"diagnostic.infoSign": "\uf129",
 	"diagnostic.hintSign": "\uf864",
-	"diagnostic.displayByAle": false,
 	"diagnostic.checkCurrentLine": true,
 	"diagnostic.virtualTextPrefix": " ❯❯❯ ",
 	"diagnostic.virtualText": true,
