@@ -17,6 +17,8 @@ func! CompileAndRun()
                 set splitbelow
                 :sp
                 :term go run %
+		elseif &filetype == 'html'
+				exec "AsyncRun! open %"
         endif
 endfunc
 

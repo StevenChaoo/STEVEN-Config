@@ -58,7 +58,12 @@ let g:coc_global_extensions = [
                         \ 'coc-clangd',
                         \ 'coc-go',
                         \ 'coc-markdownlint',
-                        \ 'coc-vimlsp']
+                        \ 'coc-vimlsp',
+						\ 'coc-html',
+						\ 'coc-clang-format-style-options',
+						\ 'coc-tsserver',
+						\ 'coc-sql',
+						\ 'coc-css']
 set hidden
 set updatetime=100
 set shortmess+=c
