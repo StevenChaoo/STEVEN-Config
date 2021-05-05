@@ -1,0 +1,151 @@
+{
+  // LATEX
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "xelatex",
+      "tools": ["xelatex"]
+    },
+    {
+      "name": "latexmk",
+      "tools": ["latexmk"]
+    },
+    {
+      "name": "pdflatex -> bibtex -> pdflatex*2",
+      "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "-pdf", "%DOC%"]
+    },
+    {
+      "name": "xelatex",
+      "command": "xelatex",
+      "args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%" ]
+    },
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%" ]
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": ["%DOCFILE%"]
+    }
+  ],
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.out",
+    "*.toc",
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.ist",
+    "*.fls",
+    "*.log",
+    "*.fdb_latexmk"
+  ],
+  "explorer.confirmDelete": false,
+  "editor.suggestSelection": "first",
+  "workbench.colorTheme": "Visual Studio Dark",
+  "editor.fontSize": 13,
+  "window.zoomLevel": 1,
+
+  //VIM
+  "vim.leader": "<space>",
+  "editor.lineNumbers": "relative",
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.useCtrlKeys": true,
+  "vim.commandLineModeKeyBindingsNonRecursive": [],
+  "vim.insertModeKeyBindings": [],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["J"],
+      "after": ["5", "j"]
+    },
+    {
+      "before": ["K"],
+      "after": ["5", "k"]
+    },
+    {
+      "before": ["H"],
+      "after": ["5", "h"]
+    },
+    {
+      "before": ["L"],
+      "after": ["5", "l"]
+    },
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["S"],
+      "commands": [":w"]
+    },
+    {
+      "before": ["Q"],
+      "commands": [":q"]
+    },
+    {
+      "before": ["<leader>", "x"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["<leader>", "-"],
+      "commands": [":split"]
+    },
+    {
+      "before": ["<leader>", "="],
+      "commands": [":vsplit"]
+    },
+    {
+      "before": ["J"],
+      "after": ["5", "j"]
+    },
+    {
+      "before": ["K"],
+      "after": ["5", "k"]
+    },
+    {
+      "before": ["H"],
+      "after": ["5", "h"]
+    },
+    {
+      "before": ["L"],
+      "after": ["5", "l"]
+    },
+    {
+      "before": ["["],
+      "after": ["0"]
+    },
+    {
+      "before": ["]"],
+      "after": ["$"]
+    },
+  ],
+  "editor.codeActionsOnSave": null,
+
+  //FORMAT
+  "[javascript]": {
+    "editor.defaultFormatter": "lonefy.vscode-JS-CSS-HTML-formatter"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "lonefy.vscode-JS-CSS-HTML-formatter"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "lonefy.vscode-JS-CSS-HTML-formatter"
+  },
+}
