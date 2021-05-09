@@ -13,9 +13,6 @@ Plug 'MattesGroeger/vim-bookmarks'
 " use X to open undotree
 Plug 'mbbill/undotree'
 
-" INDENTLINE
-"Plug 'Yggdroot/indentLine'
-
 " NERDTREE
 " use tt to open nerdtree
 Plug 'scrooloose/nerdtree'
@@ -113,5 +110,10 @@ Plug 'itchyny/vim-cursorword'
 " CLANG-FORMAT
 " use :ClangFormat to format code.
 Plug 'rhysd/vim-clang-format'
+
+" Translator
+" use :Translator to translator word
+" use :TranslatorW to translator word in float window
+Plug 'voldikss/vim-translator'
 
 call plug#end()

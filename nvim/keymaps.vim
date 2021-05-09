@@ -21,7 +21,10 @@ noremap <LEADER>x :nohlsearch<CR>
 noremap S :w<CR>
 noremap Q :q<CR>
 noremap \, /<=><CR>:nohlsearch<CR>c3l
+noremap <LEADER>t :TranslateW<cr>
 
 inoremap \\* /*<CR><ESC>xi*/<ESC>I<CR><ESC>ki
 inoremap \''' '''<CR><CR>'''<ESC>ki
 inoremap \, <ESC>/<=><CR>:nohlsearch<CR>c3l
+
+vnoremap <leader>t :TranslateW<cr>
