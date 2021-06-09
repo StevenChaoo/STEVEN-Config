@@ -18,7 +18,7 @@ alias ginit="git init"
 alias gall="git add ."
 alias gadd="git add"
 # examine the history and state
-alias glog="git log"
+alias glog="git log --all --graph"
 alias greset="git reset --hard"
 alias gstatus="git status" 
 # grow, mark and tweak your common history
@@ -83,3 +83,6 @@ alias ubuntu="ssh steven@192.168.50.180"
 
 # TOP
 alias top="gotop"
+
+# FANYI
+alias t="fanyi"
